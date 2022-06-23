@@ -11,3 +11,20 @@ After the key and nonce have been transferred, the device waits for an encryptio
 Because the key and nonce are only ever stored in RAM, when the device loses power, the secret information is no longer recoverable. Still, I would not trust this device with any real encryption duties.
 
 The algorithm can be tested locally on a PC by compiling the stub `main.c`, which encrypts using a known test vector.
+
+## Building the local stub
+
+```bash
+make -f local.mk
+```
+
+## Building the firmware
+
+- Install the RPi Pico SDK following the [instructions on github](https://github.com/raspberrypi/pico-sdk)
+- After setting the `PICO_SDK_PATH` env variable correctly, run:
+
+```bash
+build.sh
+```
+
+- `build/src` will contain various artifacts, including a `bin`, `hex`, `elf`, and `uf2` firmware file that can be *drag-and-dropped* to the pico when it appears as a mass storage device in boot mode
