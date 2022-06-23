@@ -1,0 +1,10 @@
+local_build
+obj
+build
+Makefile
+
+.vscode
+
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/c_cpp_properties.json
